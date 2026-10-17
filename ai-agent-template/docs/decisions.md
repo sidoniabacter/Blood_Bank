@@ -15,4 +15,8 @@ Rejected: the alternatives considered and why they lost.
 
 ## Entries
 
-TODO: add the first decision here.
+# 2026-10-17: Confidentiality on the demo account and password
+
+Decision: implementation of a button which can show and hide the account and password, and a button which can hide or unhide the password
+Why: for safety and on the password for the writing errors
+Rejected: it has not been rejected
