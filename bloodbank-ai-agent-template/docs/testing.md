@@ -9,13 +9,13 @@ bin/check          macOS, Linux, Git Bash
 bin\check.cmd      Windows (cmd or PowerShell)
 ```
 
-Out of the box, bin/check verifies the agent configuration: AGENTS.md has no
-TODO left and stays short, every document in docs/ has its line in AGENTS.md
+Out of the box, bin/check verifies the agent configuration: AGENTS.md is
+complete and stays short, every document in docs/ has its line in AGENTS.md
 and every line points to a file that exists, CLAUDE.md and
 .github/copilot-instructions.md point to AGENTS.md instead of copying it.
 
-When the project has code, add its own checks (lint, tests) at the marked
-place at the end of bin/check, so one command still answers "is it green?".
+The login and home-page browser tests run with `npm test` and are included in
+`bin/check`, so one command still answers "is it green?".
 
 ## Rules
 
@@ -43,3 +43,11 @@ There is no automated browser test runner. To check the login prototype:
 
 The credentials are public demo values checked in client-side JavaScript, not
 real authentication.
+
+Run `npm test` to test login validation, credential handling, field-error
+clearing, demo-account disclosure, password visibility, navigation, and
+browser/page errors. The tests open `login.html` directly; no server is
+required.
+
+The credentials are public demo values checked in client-side JavaScript, not
+real authentication. The tests do not represent production authentication.

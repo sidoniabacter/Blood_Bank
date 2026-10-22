@@ -130,6 +130,17 @@ done
 #   else
 #     fail "lint or tests"
 #   fi
+echo "Project"
+if [ "$OS" = "Windows_NT" ]; then
+  npm.cmd test
+else
+  npm test
+fi
+if [ "$?" -eq 0 ]; then
+  ok "browser tests"
+else
+  fail "browser tests"
+fi
 
 # --- Result -------------------------------------------------------------------
 echo

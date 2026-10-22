@@ -23,6 +23,10 @@ It contains no application code, so it fits any stack. Used in the course
      Read AGENTS.md in the repository root — it is the entry point
      for AI agents working here.
      ```
+   - `GEMINI.md` with a single line:
+     ```
+     @AGENTS.md
+     ```
 5. Delete the documents in `docs/` that do not apply to your project, together
    with their line in `AGENTS.md`.
 6. Run the check until it is green:
@@ -37,20 +41,20 @@ A fresh copy of the template is red on purpose: steps 3 and 4 are still to do.
 
 ## What is inside
 
-| File | What it holds | When the agent reads it |
-| --- | --- | --- |
-| `AGENTS.md` | what the project is, what is non-standard, the index of `docs/` | on every request |
-| `docs/state.md` | work in progress, open questions, rejected proposals | first, in every session |
-| `docs/hard-rules.md` | what must never be done, and why | before changing any file |
-| `docs/dev-environment.md` | how to start the project | when asked to run it |
-| `docs/testing.md` | how to check that something works | before saying it works |
-| `docs/architecture.md` | how the main parts connect | before structural changes |
-| `docs/conventions.md` | code style, branches, commit messages | before writing code |
-| `docs/workflow.md` | how a change reaches the main branch | before a pull request |
-| `docs/decisions.md` | why things were decided, with dates | before reopening a decision |
-| `docs/specs/` | one spec per feature | before building it |
-| `docs/ai-log.md` | your own account of how AI was used | never edited by the agent |
-| `bin/check` | the quick check | you run it; so can the agent |
+| File                      | What it holds                                                   | When the agent reads it      |
+| ------------------------- | --------------------------------------------------------------- | ---------------------------- |
+| `AGENTS.md`               | what the project is, what is non-standard, the index of `docs/` | on every request             |
+| `docs/state.md`           | work in progress, open questions, rejected proposals            | first, in every session      |
+| `docs/hard-rules.md`      | what must never be done, and why                                | before changing any file     |
+| `docs/dev-environment.md` | how to start the project                                        | when asked to run it         |
+| `docs/testing.md`         | how to check that something works                               | before saying it works       |
+| `docs/architecture.md`    | how the main parts connect                                      | before structural changes    |
+| `docs/conventions.md`     | code style, branches, commit messages                           | before writing code          |
+| `docs/workflow.md`        | how a change reaches the main branch                            | before a pull request        |
+| `docs/decisions.md`       | why things were decided, with dates                             | before reopening a decision  |
+| `docs/specs/`             | one spec per feature                                            | before building it           |
+| `docs/ai-log.md`          | your own account of how AI was used                             | never edited by the agent    |
+| `bin/check`               | the quick check                                                 | you run it; so can the agent |
 
 ## What bin/check verifies
 
@@ -75,5 +79,6 @@ with Git for Windows, so Git must be installed.
 - One subject per document, one line per document in the index.
 - A lesson learned goes into the document that owns the subject, not into
   `AGENTS.md`. Add a rule after a real mistake, not to prevent an imagined one.
+- If present, `GEMINI.md` points to `AGENTS.md` instead of copying it.
 - What must be remembered about the project is written in the repository, not
   left in a chat or in a tool's private memory.
