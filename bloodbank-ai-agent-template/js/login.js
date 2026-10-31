@@ -91,7 +91,7 @@ loginForm.addEventListener("submit", (event) => {
     email.toLowerCase() === DEMO_ACCOUNT.email &&
     passwordInput.value === DEMO_ACCOUNT.password
   ) {
-    window.location.href = "home.html";
+    window.location.href = "index.html";
     return;
   }
 

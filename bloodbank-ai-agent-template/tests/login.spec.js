@@ -122,7 +122,7 @@ test("signs in with the demo account and returns to login from home", async ({
   await page.getByRole("button", { name: "Login" }).click();
 
   await expect(page).toHaveURL(
-    pathToFileURL(path.resolve(__dirname, "../home.html")).href,
+    pathToFileURL(path.resolve(__dirname, "../index.html")).href,
   );
   await expect(
     page.getByRole("heading", { name: "Welcome to Blood Bank" }),

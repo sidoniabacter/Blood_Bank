@@ -45,3 +45,26 @@ Rejected:
 
 - Leave skills as-is: would perpetuate non-compliance and inconsistent agent behavior.
 - Update only some skills: would create a mixed environment where some tasks follow specs and others don't, leading to confusion.
+
+## 2026-10-31: Docker for local development
+
+Decision: Use Docker with Yarn 4.18.1 for local Blood Bank development.
+
+Why: Docker container isolates the environment, avoiding Windows EPERM errors when Corepack tries to write to `C:\Program Files\nodejs`. This allows Yarn 4.18.1 and Vite to work correctly without admin rights. Cost: slightly more complex setup, but provides consistent cross-platform behavior.
+
+Rejected:
+
+- Local Yarn install: blocked by EPERM errors on Windows Program Files directory.
+- Corepack enable on Windows: requires admin rights and fails with permission errors.
+- Global Yarn 1.x: conflicts with package.json's `packageManager` field requiring Yarn 4.18.1.
+
+## 2026-10-31: Dual development environment support
+
+Decision: Support both direct file access and Docker container for Blood Bank development.
+
+Why: Provides flexibility — direct access for quick testing/preview, Docker for consistent environment and dependency isolation (avoiding Windows Corepack permission issues). Cost: maintaining two methods in documentation.
+
+Rejected:
+
+- Docker-only approach: would break existing workflow for users without Docker or for simple file previews.
+- Direct-only approach: doesn't solve Windows Corepack permission errors and lacks dependency isolation.
